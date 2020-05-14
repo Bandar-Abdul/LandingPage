@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Landing Page - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.css" rel="stylesheet">
+
+  <Style>
+    .iPhoneDiv {
+      max-height: 800px;
+      padding-top: 2%;
+      padding-right: 1px !important;
+      padding-left: 1px !important;
+      margin-right: 100px;
+    }
+
+
+    .iphone-component {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .landing-page {
+      background: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%)
+    }
+  </Style>
+
+  <script>
+    $(function () {
+  
+  function generateNumber(min, max) {
+    min = typeof min !== 'undefined' ? min : 1;
+    max = typeof max !== 'undefined' ? max : 100;
+    
+    return Math.floor((Math.random() * max) + min);
+  }
+  
+  var chart,
+      categories = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4', 'ategorie 5','Categorie 6', 'ategorie 7', 'Categorie 8', 'Categorie 9', 'Categorie 10', 'Categorie 11', 'Categorie 12', 'Categorie 13', 'Categorie 14', 'Categorie 15', 'Categorie 16', 'Categorie 17', 'Categorie 18', 'Categorie 19','Categorie 20', 'Categorie 21','Categorie 22', 'Categorie 23', 'Categorie 24', 'Categorie 25', 'Categorie 26', 'Categorie 27', 'Categorie 28', 'Categorie 29', 'Categorie 30'],
+      serie1 = [13, 13, 46, 61, 23,12, 24, 16, 14, 12, 12, 24, 19, 13, 11, 11, 14, 11, 11, 11, 11, 13, 22, 10, 18, 15, 24, 31, 19, 10],
+      serie2 = [52, 41, 58, 63, 55, 46, 45, 41, 38, 54, 50, 39, 48, 70, 63, 60, 58, 63, 83, 89, 83, 79, 83, 100, 104, 108, 52, 46, 83, 89],
+      $aapls;
+  
+  $(document).ready(function() {
+
+    chart = new Highcharts.Chart({
+      chart: {
+        renderTo: 'graph',
+        type: 'column',
+        backgroundColor: 'transparent',
+        height: 151,
+        marginLeft: 3,
+        marginRight: 3,
+        marginBottom: 0,
+        marginTop: 0
+      },
+      title: {
+        text: ''
+      },
+      xAxis: {
+        lineWidth: 0,
+        tickWidth: 0,
+        labels: { 
+          enabled: false 
+        },
+        categories: categories
+      },
+      yAxis: {
+        labels: { 
+          enabled: false 
+        },
+        gridLineWidth: 0,
+        title: {
+          text: null,
+        },
+      },
+      series: [{
+        name: 'Awesomness',
+        data: serie1
+      }, {
+        name: 'More Awesomness',
+        color: '#fff',
+        type: 'line',
+        data: serie2
+      }],
+      credits: { 
+        enabled: false 
+      },
+      legend: { 
+        enabled: false 
+      },
+      plotOptions: {
+        column: {
+          borderWidth: 0,
+          color: '#e75e3a',
+          shadow: false
+        },
+        line: {
+          marker: { 
+            enabled: false 
+          },
+          lineWidth: 3
+        }
+      },
+      tooltip: { 
+        enabled: false
+      }
+    });
+      
+    setInterval(function() {
+      chart.series[0].addPoint(generateNumber(), true, true);
+      chart.series[1].addPoint(generateNumber(50, 150), true, true);
+    }, 1000);
+    
+    
+  
+    setInterval(function() {
+      $('.info-aapl span').each(function(index, elem) {
+        $(elem).animate({
+          height: generateNumber(1, 40)
+        });
+      });
+
+    }, 3000);
+  });
+  
+});
+    </script>
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://code.highcharts.com/highcharts.js'></script><script  src="./script.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="btn btn-primary" href="#">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="landing-page">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 iPhoneDiv my-auto">
+          <div class="iphone iphone-component"></div>
+          <div class="circle iphone-component"></div>
+          <div class="camera iphone-component"></div>
+          <div class="speaker iphone-component"></div>
+          <iframe class="screen iphone-component" src="http://142.93.107.10/"></iframe>
+          <div class="home1 iphone-component"></div>
+          <div class="home2 iphone-component"></div>
+          <div class="line iphone-component"></div>
+        </div>
+        <div class="col-sm text-white my-auto">
+          <h1 class="mb-5 align-bottom">Build an instant app for your business or project and generate more leads!</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features-icons bg-light text-center">
+    <header class="header-design">
+      <div class="listar-map-button">
+        <div class="listar-map-button-text" style="display: inline-block; opacity: 1;">
+          <span class="icon-map2">
+            Packages </span>
+        </div>
+      </div>
+
+      <div class="footer-wave"></div>
+    </header>
+    <div class="pset">
+      <div class="container">
+        <div class="row listar-feature-items">
+
+          <div
+            class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image listar-height-changed"
+            data-aos="fade-zoom-in" data-aos-group="features" data-line-height="25.2px">
+            <div class="listar-feature-item listar-feature-has-link">
+
+              <a href="https://bit.ly/3aX1PHf" target="_blank"></a>
+
+              <div class="listar-feature-item-inner">
+
+                <div class="listar-feature-right-border"></div>
+
+                <div class="listar-feature-block-content-wrapper">
+                  <div class="listar-feature-icon-wrapper">
+                    <div class="listar-feature-icon-inner">
+                      <div>
+                        <img alt="Businesses" class="listar-image-icon"
+                          src="https://image.flaticon.com/icons/svg/1899/1899582.svg">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="listar-feature-content-wrapper" style="padding-top: 0px;">
+
+                    <div class="listar-feature-item-title listar-feature-counter-added">
+                      <span><span>01</span>
+                        Basic </span>
+                    </div>
+
+                    <div class="listar-feature-item-excerpt">
+                      Start publish listings to show everyone the details and goodies of your establishment. </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="listar-feature-fix-bottom-padding listar-fix-feature-arrow-button-height"></div>
+          </div>
+
+          <div
+            class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image listar-height-changed"
+            data-aos="fade-zoom-in" data-aos-group="features" data-line-height="25.2px">
+            <div class="listar-feature-item listar-feature-has-link">
+
+              <a href="https://bit.ly/3aX1PHf" target="_blank"></a>
+
+              <div class="listar-feature-item-inner">
+
+                <div class="listar-feature-right-border"></div>
+
+                <div class="listar-feature-block-content-wrapper">
+                  <div class="listar-feature-icon-wrapper">
+                    <div class="listar-feature-icon-inner">
+                      <div>
+                        <img alt="Customers" class="listar-image-icon"
+                          src="https://image.flaticon.com/icons/svg/1899/1899506.svg">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="listar-feature-content-wrapper" style="padding-top: 0px;">
+
+                    <div class="listar-feature-item-title listar-feature-counter-added">
+                      <span><span>02</span>
+                        Basic+ </span>
+                    </div>
+
+                    <div class="listar-feature-item-excerpt">
+                      Easily find interesting places by local experts, save time by checking listing features. </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="listar-feature-fix-bottom-padding listar-fix-feature-arrow-button-height"></div>
+          </div>
+
+          <div
+            class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image listar-height-changed"
+            data-aos="fade-zoom-in" data-aos-group="features" data-line-height="25.2px">
+            <div class="listar-feature-item listar-feature-has-link">
+
+              <a href="https://bit.ly/3aX1PHf" target="_blank"></a>
+
+              <div class="listar-feature-item-inner">
+
+                <div class="listar-feature-right-border"></div>
+
+                <div class="listar-feature-block-content-wrapper">
+                  <div class="listar-feature-icon-wrapper">
+                    <div class="listar-feature-icon-inner">
+                      <div>
+                        <img alt="Feedback" class="listar-image-icon"
+                          src="https://image.flaticon.com/icons/svg/1899/1899604.svg">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="listar-feature-content-wrapper" style="padding-top: 0px;">
+
+                    <div class="listar-feature-item-title listar-feature-counter-added">
+                      <span><span>03</span>
+                        Pro </span>
+                    </div>
+
+                    <div class="listar-feature-item-excerpt">
+                      Visitors discuss listings to share experiences, so businesses get reputation consolidated. </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="listar-feature-fix-bottom-padding listar-fix-feature-arrow-button-height"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="row">
+          <div class="col showcase-text">
+            <h2>iOS & Android support</h2>
+            <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look
+              great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+          </div>
+
+          <div class="col-lg-4 col-md-8 CustomMedia">
+              <img class="img-fluid" src="img/Phones.png">
+        </div>
+        </div>
+
+
+        <div class="row">
+
+
+            <div class="col-lg-3 col-md-4 col-sm-12 order-sm-12 order-12 CustomMedia">
+                
+              <div class="section section-graph">
+                <div class="graph-info">
+                  <i class="graph-arrow"></i>
+                  <span class="graph-info-big">Orders</span>
+                  <span class="graph-info-small">312 (+3.71%)</span>
+                </div>
+                <div id="graph"></div>
+              </div>
+              
+              <div class="section section-info">
+                <span class="info-time">Last order</span>
+                <h3 class="info-title">Today 2:25 PM</h3>
+                
+                <div class="info-block">
+                  <dl>
+                    <dt>1200</dt>
+                    <dd>Visits Today</dd>
+                  </dl>
+                </div>
+                
+                <div class="info-block last">
+                  <dl>
+                    <dt>13,789 SAR</dt>
+                    <dd>Month Revnue</dd>
+                  </dl>
+                </div>
+                
+                <div class="info-aapl">
+                  <h4>2020</h4>
+                  <ul>
+                    <li><span class="orange" style="height: 37.5%"></span></li>
+                    <li><span class="orange" style="height: 47.5%"></span></li>
+                    <li><span class="orange" style="height: 70%"></span></li>
+                    <li><span class="orange" style="height: 85%"></span></li>
+                    <li><span class="orange" style="height: 40%"></span></li>
+                    <li><span class="green" style="height: 75%"></span></li>
+                    <li><span class="green" style="height: 50%"></span></li>
+                    <li><span class="green" style="height: 15%"></span></li>
+                    <li><span class="green" style="height: 25%"></span></li>
+                  </ul>
+                </div>
+                
+                <div class="yearly-change">
+                  <h4>Monthly Change</h4>
+                  <span><em>+</em> 127.01%</span>
+                </div>
+              </div>
+              <div class="section"></div>
+            </div>
+
+          <div class="col order-lg-12 order-md-12 showcase-text">
+            <h2>Content management capabilities & analytics</h2>
+            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in
+              mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">Powered By</h2>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/Wordpress.jpg" alt="">
+            <h5>Wordpress</h5>
+            <p class="font-weight-light mb-0">Most popular CMS in the world!. Used by more than 75 million websites.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/DigitalOcean.jpg" alt="">
+            <h5>Digital Ocean</h5>
+            <p class="font-weight-light mb-0">World-class service with a fantastic “Average” Uptime of 99.99% !</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/WooCommerce.jpg" alt="">
+            <h5>WooCommerce</h5>
+            <p class="font-weight-light mb-0">Powering 29.16% of the e-commerce market in 2020!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <header class="header-design">
+    <div hidden class="listar-map-button">
+      <div class="listar-map-button-text" style="display: inline-block; opacity: 1;">
+        <span class="icon-map2">
+          Packages </span>
+      </div>
+    </div>
+
+    <div class="footer-wave"></div>
+  </header>
+
+  <!-- Call to Action -->
+  <section hidden class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
