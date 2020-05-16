@@ -728,13 +728,14 @@ header .footer-wave {
 }
 
 .screen {
-  width: 326px;
-  height: 580px;
+  width: 335px;
+  height: 590px;
   border: 3px solid #333;
   border-radius: 5px;
   position: relative;
-  left: 18px;
-  top: -710px;
+  left: 12px;
+  top: -715px;
+  overflow: hidden;
 }  
 
 .home1 {
