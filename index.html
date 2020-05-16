@@ -10,10 +10,11 @@
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://code.highcharts.com/highcharts.js'></script><script  src="./script.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://code.highcharts.com/highcharts.js'></script>
+  <script src="./script.js"></script>
 
   <title>Landing Page</title>
 
@@ -30,135 +31,488 @@
   <link href="css/landing-page.css" rel="stylesheet">
 
   <Style>
-    .iPhoneDiv {
-      max-height: 800px;
-      padding-top: 2%;
-      padding-right: 1px !important;
-      padding-left: 1px !important;
-      margin-right: 100px;
-    }
-
-
-    .iphone-component {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
     .landing-page {
+      padding: 10px 0px;
       background: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%)
     }
 
-    .features-list{
-    width:90%;
-    margin-right: auto;
-    margin-left:auto;
-}
+    .features-list {
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto;
+    }
   </Style>
 
   <script>
     $(function () {
-  
-  function generateNumber(min, max) {
-    min = typeof min !== 'undefined' ? min : 1;
-    max = typeof max !== 'undefined' ? max : 100;
-    
-    return Math.floor((Math.random() * max) + min);
-  }
-  
-  var chart,
-      categories = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4', 'ategorie 5','Categorie 6', 'ategorie 7', 'Categorie 8', 'Categorie 9', 'Categorie 10', 'Categorie 11', 'Categorie 12', 'Categorie 13', 'Categorie 14', 'Categorie 15', 'Categorie 16', 'Categorie 17', 'Categorie 18', 'Categorie 19','Categorie 20', 'Categorie 21','Categorie 22', 'Categorie 23', 'Categorie 24', 'Categorie 25', 'Categorie 26', 'Categorie 27', 'Categorie 28', 'Categorie 29', 'Categorie 30'],
-      serie1 = [13, 13, 46, 61, 23,12, 24, 16, 14, 12, 12, 24, 19, 13, 11, 11, 14, 11, 11, 11, 11, 13, 22, 10, 18, 15, 24, 31, 19, 10],
-      serie2 = [52, 41, 58, 63, 55, 46, 45, 41, 38, 54, 50, 39, 48, 70, 63, 60, 58, 63, 83, 89, 83, 79, 83, 100, 104, 108, 52, 46, 83, 89],
-      $aapls;
-  
-  $(document).ready(function() {
 
-    chart = new Highcharts.Chart({
-      chart: {
-        renderTo: 'graph',
-        type: 'column',
-        backgroundColor: 'transparent',
-        height: 151,
-        marginLeft: 3,
-        marginRight: 3,
-        marginBottom: 0,
-        marginTop: 0
-      },
-      title: {
-        text: ''
-      },
-      xAxis: {
-        lineWidth: 0,
-        tickWidth: 0,
-        labels: { 
-          enabled: false 
-        },
-        categories: categories
-      },
-      yAxis: {
-        labels: { 
-          enabled: false 
-        },
-        gridLineWidth: 0,
-        title: {
-          text: null,
-        },
-      },
-      series: [{
-        name: 'Awesomness',
-        data: serie1
-      }, {
-        name: 'More Awesomness',
-        color: '#fff',
-        type: 'line',
-        data: serie2
-      }],
-      credits: { 
-        enabled: false 
-      },
-      legend: { 
-        enabled: false 
-      },
-      plotOptions: {
-        column: {
-          borderWidth: 0,
-          color: '#e75e3a',
-          shadow: false
-        },
-        line: {
-          marker: { 
-            enabled: false 
-          },
-          lineWidth: 3
-        }
-      },
-      tooltip: { 
-        enabled: false
+      function generateNumber(min, max) {
+        min = typeof min !== 'undefined' ? min : 1;
+        max = typeof max !== 'undefined' ? max : 100;
+
+        return Math.floor((Math.random() * max) + min);
       }
-    });
-      
-    setInterval(function() {
-      chart.series[0].addPoint(generateNumber(), true, true);
-      chart.series[1].addPoint(generateNumber(50, 150), true, true);
-    }, 1000);
-    
-    
-  
-    setInterval(function() {
-      $('.info-aapl span').each(function(index, elem) {
-        $(elem).animate({
-          height: generateNumber(1, 40)
+
+      var chart,
+        categories = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4', 'ategorie 5', 'Categorie 6', 'ategorie 7', 'Categorie 8', 'Categorie 9', 'Categorie 10', 'Categorie 11', 'Categorie 12', 'Categorie 13', 'Categorie 14', 'Categorie 15', 'Categorie 16', 'Categorie 17', 'Categorie 18', 'Categorie 19', 'Categorie 20', 'Categorie 21', 'Categorie 22', 'Categorie 23', 'Categorie 24', 'Categorie 25', 'Categorie 26', 'Categorie 27', 'Categorie 28', 'Categorie 29', 'Categorie 30'],
+        serie1 = [13, 13, 46, 61, 23, 12, 24, 16, 14, 12, 12, 24, 19, 13, 11, 11, 14, 11, 11, 11, 11, 13, 22, 10, 18, 15, 24, 31, 19, 10],
+        serie2 = [52, 41, 58, 63, 55, 46, 45, 41, 38, 54, 50, 39, 48, 70, 63, 60, 58, 63, 83, 89, 83, 79, 83, 100, 104, 108, 52, 46, 83, 89],
+        $aapls;
+
+      $(document).ready(function () {
+
+        chart = new Highcharts.Chart({
+          chart: {
+            renderTo: 'graph',
+            type: 'column',
+            backgroundColor: 'transparent',
+            height: 151,
+            marginLeft: 3,
+            marginRight: 3,
+            marginBottom: 0,
+            marginTop: 0
+          },
+          title: {
+            text: ''
+          },
+          xAxis: {
+            lineWidth: 0,
+            tickWidth: 0,
+            labels: {
+              enabled: false
+            },
+            categories: categories
+          },
+          yAxis: {
+            labels: {
+              enabled: false
+            },
+            gridLineWidth: 0,
+            title: {
+              text: null,
+            },
+          },
+          series: [{
+            name: 'Awesomness',
+            data: serie1
+          }, {
+            name: 'More Awesomness',
+            color: '#fff',
+            type: 'line',
+            data: serie2
+          }],
+          credits: {
+            enabled: false
+          },
+          legend: {
+            enabled: false
+          },
+          plotOptions: {
+            column: {
+              borderWidth: 0,
+              color: '#e75e3a',
+              shadow: false
+            },
+            line: {
+              marker: {
+                enabled: false
+              },
+              lineWidth: 3
+            }
+          },
+          tooltip: {
+            enabled: false
+          }
         });
+
+        setInterval(function () {
+          chart.series[0].addPoint(generateNumber(), true, true);
+          chart.series[1].addPoint(generateNumber(50, 150), true, true);
+        }, 1000);
+
+
+
+        setInterval(function () {
+          $('.info-aapl span').each(function (index, elem) {
+            $(elem).animate({
+              height: generateNumber(1, 40)
+            });
+          });
+
+        }, 3000);
       });
 
-    }, 3000);
-  });
-  
-});
+    });
 
-    </script>
+  </script>
 
-  
+  <style>
+    body,
+    html {
+      background-color: #eee;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    /*----------*\
+   #LAYOUT
+\*----------*/
+
+
+
+    .temp-wrapper {
+      margin: 20px;
+    }
+
+    @media all and (min-width: 480px) {
+      .temp-wrapper {
+        width: 50%;
+        margin: 20px auto;
+      }
+
+      .temp-wrapper--wide {
+        width: 100%;
+      }
+
+      .temp-wrapper--wider {
+        width: 100%;
+      }
+    }
+
+    @media all and (min-width: 768px) {
+      .temp-wrapper {
+        width: 33.33337%;
+      }
+
+      .temp-wrapper--wide {
+        width: 66.66667%;
+      }
+
+      .temp-wrapper--wider {
+        width: 100%;
+      }
+    }
+
+    @media all and (min-width: 1024px) {
+      .temp-wrapper {
+        width: 25%;
+      }
+
+      .temp-wrapper--wide {
+        width: 50%;
+      }
+
+      .temp-wrapper--wider {
+        width: 75%;
+      }
+    }
+
+
+
+
+
+    /*------------*\
+   #IPHONE X
+\*------------*/
+
+
+
+    .px {
+      position: relative;
+      padding: 6% 7%;
+    }
+
+    .px--ls {
+      padding: 3.3% 3%;
+    }
+
+    .px__body {
+      position: absolute;
+      top: 0;
+      right: 1%;
+      bottom: 0;
+      left: 1%;
+      background: linear-gradient(to top, #e5e5e5 0%, #f7f7f9 10%, #eeeef0 90%);
+      border-radius: 14%/7%;
+      box-shadow: inset 0 0 3px 1px #000
+    }
+
+    .px--ls>.px__body {
+      top: 1%;
+      right: 0;
+      bottom: 1%;
+      left: 0;
+      border-radius: 7%/14%;
+    }
+
+    .px__body:before {
+      content: '';
+      position: absolute;
+      top: .7%;
+      right: 1.4%;
+      bottom: .7%;
+      left: 1.4%;
+      background-color: #000;
+      border-radius: 13%/7%;
+      box-shadow: 0 0 3px #000
+    }
+
+    .px--ls>.px__body:before {
+      top: 1.4%;
+      right: .7%;
+      bottom: 1.4%;
+      left: .7%;
+      border-radius: 7%/13%;
+    }
+
+    .px__body:after {
+      content: '';
+      position: absolute;
+      top: 1%;
+      right: 2.3%;
+      bottom: 1%;
+      left: 2.3%;
+      background-color: #000;
+      box-shadow: inset 0 0 10px 2px #fff;
+      border-radius: 13%/6.5%;
+    }
+
+    .px--ls>.px__body:after {
+      top: 2.3%;
+      right: 1%;
+      bottom: 2.3%;
+      left: 1%;
+      border-radius: 6.5%/13%;
+    }
+
+    .px__body__cut {
+      position: absolute;
+      z-index: 2;
+      top: 3%;
+      left: 50%;
+      width: 50%;
+      height: 3.5%;
+      background-color: #000;
+      border-radius: 0 0 10% 10%/80%;
+      transform: translate3d(-50%, 0, 0);
+    }
+
+    .px--ls .px__body__cut {
+      top: 50%;
+      left: 3%;
+      width: 3.5%;
+      height: 50%;
+      border-radius: 0 80% 80% 0/10%;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    .px__body__speaker,
+    .px__body__camera,
+    .px__body__sensor {
+      position: absolute;
+      z-index: 2;
+      background-color: #222;
+      transform: translate(-50%, -50%);
+    }
+
+    .px__body__speaker {
+      top: 4%;
+      left: 50%;
+      width: 12%;
+      height: .8%;
+      border-radius: 5px;
+    }
+
+    .px--ls .px__body__speaker {
+      top: 50%;
+      left: 4%;
+      width: .8%;
+      height: 12%;
+    }
+
+    .px__body__camera {
+      top: 4%;
+      left: 36%;
+      width: 3.5%;
+      height: 1.7%;
+      border-radius: 50%;
+      box-shadow: inset 0 0 2px 1px #000;
+    }
+
+    .px--ls .px__body__camera {
+      top: 64%;
+      left: 4%;
+      width: 1.7%;
+      height: 3.5%;
+    }
+
+    .px__body__sensor {
+      top: 4%;
+      left: 61%;
+      width: 2.2%;
+      height: 1.1%;
+      border-radius: 50%;
+      background-color: #2a4a73;
+      box-shadow: inset 0 0 2px 1px #000;
+    }
+
+    .px--ls .px__body__sensor {
+      top: 39%;
+      left: 4%;
+      width: 1.1%;
+      height: 2.2%;
+    }
+
+    .px__body__mute,
+    .px__body__up,
+    .px__body__down,
+    .px__body__right {
+      position: absolute;
+      background-color: #b5b8ba;
+      box-shadow: inset 0 5px 5px -3px rgba(0, 0, 0, .5), inset 0 -5px 5px -3px rgba(0, 0, 0, .5);
+      transform: translate(0, -50%);
+    }
+
+    .px--ls .px__body__mute,
+    .px--ls .px__body__up,
+    .px--ls .px__body__down,
+    .px--ls .px__body__right {
+      box-shadow: inset 5px 0 5px -3px rgba(0, 0, 0, .5), inset -5px 0 5px -3px rgba(0, 0, 0, .5);
+      transform: translate(-50%, 0);
+    }
+
+    .px--ls .px__body__right {
+      background-color: #f4f6f6;
+    }
+
+    .px__body__mute {
+      top: 14.7%;
+      left: -.7%;
+      width: .7%;
+      height: 4%;
+      border-radius: 1px 0 0 1px;
+    }
+
+    .px--ls .px__body__mute {
+      top: auto;
+      left: 14.7%;
+      bottom: -.7%;
+      width: 4%;
+      height: .7%;
+      border-radius: 0 0 1px 1px;
+    }
+
+    .px__body__up,
+    .px__body__down {
+      left: -1%;
+      width: 1%;
+      height: 7.5%;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .px--ls .px__body__up,
+    .px--ls .px__body__down {
+      bottom: -1%;
+      width: 7.5%;
+      height: 1%;
+      border-radius: 0 0 2px 2px;
+    }
+
+    .px__body__up {
+      top: 25%;
+    }
+
+    .px--ls .px__body__up {
+      top: auto;
+      left: 25%;
+    }
+
+    .px__body__down {
+      top: 34%;
+    }
+
+    .px--ls .px__body__down {
+      top: auto;
+      left: 34%;
+    }
+
+    .px__body__right {
+      top: 25%;
+      right: -1%;
+      width: 1%;
+      height: 7.5%;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .px--ls .px__body__right {
+      top: -1%;
+      right: auto;
+      left: 25%;
+      width: 7.5%;
+      height: 1%;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .px__screen {
+      position: relative;
+      z-index: 1;
+    }
+
+    .px__screen__ {
+      position: relative;
+      padding-bottom: 218%;
+      background-color: #888;
+      border-radius: 10%/5%;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .px--ls .px__screen__ {
+      padding-bottom: 46%;
+      border-radius: 5%/10%;
+    }
+
+    .px__screen__frame {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      border-radius: inherit;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .iPhone-header {
+      width: 100%;
+      height: 3.5% !important;
+      background: #51688f;
+      /*
+          --ion-color-primary
+          */
+    }
+
+
+    .modal-iframe-wrapper {
+      overflow: hidden;
+      background: red;
+      height: 100%;
+      width: 100%;
+      right: 0.5%;
+      height: 97%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0 !important;
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -166,30 +520,45 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Abdulrahman & Bandar's very big company</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
+      <a class="navbar-brand" href="#">A'B Co.</a>
+      <a class="btn btn-primary" href="#">About us</a>
     </div>
   </nav>
 
   <!-- Masthead -->
   <header class="landing-page">
-    <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 iPhoneDiv my-auto">
-          <div class="iphone iphone-component"></div>
-          <div class="circle iphone-component"></div>
-          <div class="camera iphone-component"></div>
-          <div class="speaker iphone-component"></div>
-          <iframe id="iphoneFrame" class="screen iphone-component" src="http://142.93.107.10" style="-moz-transform-origin: top left; -webkit-transform-origin: top left; -o-transform-origin: top left; -ms-transform-origin: top left; transform-origin: top left;"></iframe>
-          <div class="home1 iphone-component"></div>
-          <div class="home2 iphone-component"></div>
-          <div class="line iphone-component"></div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="px">
+            <div class="px__body">
+              <div class="px__body__cut"></div>
+              <div class="px__body__speaker"></div>
+              <div class="px__body__sensor"></div>
+
+              <div class="px__body__mute"></div>
+              <div class="px__body__up"></div>
+              <div class="px__body__down"></div>
+              <div class="px__body__right"></div>
+            </div>
+
+            <div class="px__screen">
+              <div class="px__screen__">
+                <div class="px__screen__frame">
+                  <div class="iPhone-header"></div>
+                  <iframe frameborder="0" class="modal-iframe-wrapper" src="http://142.93.107.10"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
-        <div class="col-sm text-white my-auto">
-          <h1 class="mb-5 align-bottom">Build an instant app for your business or project and generate more leads!</h1>
+        <div class="col-lg-7 col-md-6 col-sm-6 text-white my-auto">
+          <h1 class="mb-5">Build an instant app for your business or project and generate more leads!</h1>
         </div>
       </div>
+    </div>
     </div>
   </header>
 
@@ -197,7 +566,7 @@
     <header class="header-design">
       <div class="listar-map-button">
         <div class="listar-map-button-text" style="display: inline-block; opacity: 1;">
-          <span class="icon-map2">
+          <span hidden class="icon-map2">
             Packages </span>
         </div>
       </div>
@@ -400,76 +769,78 @@
         <div class="row">
           <div class="col showcase-text">
             <h2>iOS & Android support</h2>
-            <p class="lead mb-0">Our application supports both iOS and Android!. 
-              Instant deployment to both platforms at a 99% similarity of look and feel. All functionality is available on both platform except for Apple Pay being exclusive on iOS.
+            <p class="lead mb-0">Our application supports both iOS and Android!.
+              Instant deployment to both platforms at a 99% similarity of look and feel. All functionality is available
+              on both platform except for Apple Pay being exclusive on iOS.
               Any changes to content reflects immedietly on both platforms. </p>
           </div>
 
           <div class="col-lg-4 col-md-8 CustomMedia">
-              <img class="img-fluid" src="img/Phones.png">
-        </div>
+            <img class="img-fluid" src="img/Phones.png">
+          </div>
         </div>
 
 
         <div class="row">
 
 
-            <div class="col-lg-3 col-md-4 col-sm-12 order-sm-12 order-12 CustomMedia">
-                
-              <div class="section section-graph">
-                <div class="graph-info">
-                  <i class="graph-arrow"></i>
-                  <span class="graph-info-big">Orders</span>
-                  <span class="graph-info-small">312 (+3.71%)</span>
-                </div>
-                <div id="graph"></div>
+          <div class="col-lg-3 col-md-4 col-sm-9 col-xs-4 order-sm-12 order-12 CustomMedia">
+
+            <div class="section section-graph">
+              <div class="graph-info">
+                <i class="graph-arrow"></i>
+                <span class="graph-info-big">Orders</span>
+                <span class="graph-info-small">312 (+3.71%)</span>
               </div>
-              
-              <div class="section section-info">
-                <span class="info-time">Last order</span>
-                <h3 class="info-title">Today 2:25 PM</h3>
-                
-                <div class="info-block">
-                  <dl>
-                    <dt>1200</dt>
-                    <dd>Visits Today</dd>
-                  </dl>
-                </div>
-                
-                <div class="info-block last">
-                  <dl>
-                    <dt>13,789 SAR</dt>
-                    <dd>Month Revnue</dd>
-                  </dl>
-                </div>
-                
-                <div class="info-aapl">
-                  <h4>2020</h4>
-                  <ul>
-                    <li><span class="orange" style="height: 37.5%"></span></li>
-                    <li><span class="orange" style="height: 47.5%"></span></li>
-                    <li><span class="orange" style="height: 70%"></span></li>
-                    <li><span class="orange" style="height: 85%"></span></li>
-                    <li><span class="orange" style="height: 40%"></span></li>
-                    <li><span class="green" style="height: 75%"></span></li>
-                    <li><span class="green" style="height: 50%"></span></li>
-                    <li><span class="green" style="height: 15%"></span></li>
-                    <li><span class="green" style="height: 25%"></span></li>
-                  </ul>
-                </div>
-                
-                <div class="yearly-change">
-                  <h4>Monthly Change</h4>
-                  <span><em>+</em> 127.01%</span>
-                </div>
-              </div>
-              <div class="section"></div>
+              <div id="graph"></div>
             </div>
+
+            <div class="section section-info">
+              <span class="info-time">Last order</span>
+              <h3 class="info-title">Today 2:25 PM</h3>
+
+              <div class="info-block">
+                <dl>
+                  <dt>1200</dt>
+                  <dd>Visits Today</dd>
+                </dl>
+              </div>
+
+              <div class="info-block last">
+                <dl>
+                  <dt>13,789 SAR</dt>
+                  <dd>Month Revnue</dd>
+                </dl>
+              </div>
+
+              <div class="info-aapl">
+                <h4>2020</h4>
+                <ul>
+                  <li><span class="orange" style="height: 37.5%"></span></li>
+                  <li><span class="orange" style="height: 47.5%"></span></li>
+                  <li><span class="orange" style="height: 70%"></span></li>
+                  <li><span class="orange" style="height: 85%"></span></li>
+                  <li><span class="orange" style="height: 40%"></span></li>
+                  <li><span class="green" style="height: 75%"></span></li>
+                  <li><span class="green" style="height: 50%"></span></li>
+                  <li><span class="green" style="height: 15%"></span></li>
+                  <li><span class="green" style="height: 25%"></span></li>
+                </ul>
+              </div>
+
+              <div class="yearly-change">
+                <h4>Monthly Change</h4>
+                <span><em>+</em> 127.01%</span>
+              </div>
+            </div>
+            <div class="section"></div>
+          </div>
 
           <div class="col order-lg-12 order-md-12 showcase-text">
             <h2>Content management capabilities & analytics</h2>
-            <p class="lead mb-0">Supports adding products, categories, coupon codes and more. 
-              Customizable languages, payment and shipping methods. Integrated with Google Analytics to analyze orders and traffic to grow your business. 
+            <p class="lead mb-0">Supports adding products, categories, coupon codes and more.
+              Customizable languages, payment and shipping methods. Integrated with Google Analytics to analyze orders
+              and traffic to grow your business.
             </p>
           </div>
 
