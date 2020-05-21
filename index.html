@@ -10,9 +10,11 @@
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src='https://code.highcharts.com/highcharts.js'></script>
   <script src="./script.js"></script>
 
@@ -43,108 +45,6 @@
     }
   </Style>
 
-  <script>
-    $(function () {
-
-      function generateNumber(min, max) {
-        min = typeof min !== 'undefined' ? min : 1;
-        max = typeof max !== 'undefined' ? max : 100;
-
-        return Math.floor((Math.random() * max) + min);
-      }
-
-      var chart,
-        categories = ['Categorie 1', 'Categorie 2', 'Categorie 3', 'Categorie 4', 'ategorie 5', 'Categorie 6', 'ategorie 7', 'Categorie 8', 'Categorie 9', 'Categorie 10', 'Categorie 11', 'Categorie 12', 'Categorie 13', 'Categorie 14', 'Categorie 15', 'Categorie 16', 'Categorie 17', 'Categorie 18', 'Categorie 19', 'Categorie 20', 'Categorie 21', 'Categorie 22', 'Categorie 23', 'Categorie 24', 'Categorie 25', 'Categorie 26', 'Categorie 27', 'Categorie 28', 'Categorie 29', 'Categorie 30'],
-        serie1 = [13, 13, 46, 61, 23, 12, 24, 16, 14, 12, 12, 24, 19, 13, 11, 11, 14, 11, 11, 11, 11, 13, 22, 10, 18, 15, 24, 31, 19, 10],
-        serie2 = [52, 41, 58, 63, 55, 46, 45, 41, 38, 54, 50, 39, 48, 70, 63, 60, 58, 63, 83, 89, 83, 79, 83, 100, 104, 108, 52, 46, 83, 89],
-        $aapls;
-
-      $(document).ready(function () {
-
-        chart = new Highcharts.Chart({
-          chart: {
-            renderTo: 'graph',
-            type: 'column',
-            backgroundColor: 'transparent',
-            height: 151,
-            marginLeft: 3,
-            marginRight: 3,
-            marginBottom: 0,
-            marginTop: 0
-          },
-          title: {
-            text: ''
-          },
-          xAxis: {
-            lineWidth: 0,
-            tickWidth: 0,
-            labels: {
-              enabled: false
-            },
-            categories: categories
-          },
-          yAxis: {
-            labels: {
-              enabled: false
-            },
-            gridLineWidth: 0,
-            title: {
-              text: null,
-            },
-          },
-          series: [{
-            name: 'Awesomness',
-            data: serie1
-          }, {
-            name: 'More Awesomness',
-            color: '#fff',
-            type: 'line',
-            data: serie2
-          }],
-          credits: {
-            enabled: false
-          },
-          legend: {
-            enabled: false
-          },
-          plotOptions: {
-            column: {
-              borderWidth: 0,
-              color: '#e75e3a',
-              shadow: false
-            },
-            line: {
-              marker: {
-                enabled: false
-              },
-              lineWidth: 3
-            }
-          },
-          tooltip: {
-            enabled: false
-          }
-        });
-
-        setInterval(function () {
-          chart.series[0].addPoint(generateNumber(), true, true);
-          chart.series[1].addPoint(generateNumber(50, 150), true, true);
-        }, 1000);
-
-
-
-        setInterval(function () {
-          $('.info-aapl span').each(function (index, elem) {
-            $(elem).animate({
-              height: generateNumber(1, 40)
-            });
-          });
-
-        }, 3000);
-      });
-
-    });
-
-  </script>
 
   <style>
     body,
@@ -738,35 +638,445 @@
       }
     }
 
-    .navtigation-bar{
-    font-family: Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif;
-line-height: 19px;
--webkit-font-smoothing: antialiased;
-font-size: 14px;
-color: #fff;
-background: #130d38;
-text-align: center;
-font-weight: 700;
-padding: 15px 20px 10px;
-  }
-  .navtigation-bar-button{
-    font-family: Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif;
-line-height: 19px;
--webkit-font-smoothing: antialiased;
-text-align: center;
-font-weight: 700;
-display: inline-block;
-color: #130d38;
-background: #fff;
-text-decoration: none;
-border-radius: 7px;
-padding: 8px 10px;
-margin-left: 10px;
-font-size: 14px;
-margin-top: 5px;
-  }
+    .navtigation-bar {
+      font-family: Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+      line-height: 19px;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      color: #fff;
+      background: #130d38;
+      text-align: center;
+      font-weight: 700;
+      padding: 15px 20px 10px;
+    }
+
+    .navtigation-bar-button {
+      font-family: Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+      line-height: 19px;
+      -webkit-font-smoothing: antialiased;
+      text-align: center;
+      font-weight: 700;
+      display: inline-block;
+      color: #130d38;
+      background: #fff;
+      text-decoration: none;
+      border-radius: 7px;
+      padding: 8px 10px;
+      margin-left: 10px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
   </style>
 
+  <!-- animation -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .device-wrapper {
+      height: 40vh;
+    }
+
+    .device-sm {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    .device-sm::before,
+    .device-sm::after {
+      content: '';
+      position: absolute;
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .device-sm::before {
+      top: 10px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: scale(0) translateX(-50%);
+      z-index: 1;
+    }
+
+    .device-sm::after {
+      bottom: 0;
+      left: 30px;
+      right: 30px;
+      height: 0;
+      z-index: 1;
+      border-radius: 4px 4px 20px 20px;
+      background-color: #757575;
+      background-repeat: no-repeat;
+      background-size: 100px 6px, auto auto;
+      background-position: top center, top center;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.05) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 10%, transparent 15%, rgba(0, 0, 0, 0.1) 68%, rgba(0, 0, 0, 0.275) 73%);
+      box-shadow: 0px 3px 5px 3px transparent;
+    }
+
+    .device-md {
+      position: absolute;
+      margin: auto;
+      top: 50%;
+      left: 50%;
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    .device-md::before,
+    .device-md::after {
+      content: '';
+      position: absolute;
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .device-md::before {
+      top: 10px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: scale(0) translateX(-50%);
+      z-index: 1;
+    }
+
+    .device-md::after {
+      bottom: 0;
+      left: 30px;
+      right: 30px;
+      height: 0;
+      z-index: 1;
+      border-radius: 4px 4px 20px 20px;
+      background-color: #757575;
+      background-repeat: no-repeat;
+      background-size: 100px 6px, auto auto;
+      background-position: top center, top center;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.05) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 10%, transparent 15%, rgba(0, 0, 0, 0.1) 68%, rgba(0, 0, 0, 0.275) 73%);
+      box-shadow: 0px 3px 5px 3px transparent;
+    }
+
+    .device-lg {
+      position: absolute;
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      top: 50%;
+      left: 50%;
+      padding: 0 40px 5px;
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .device-lg::before,
+    .device-lg::after {
+      content: '';
+      position: absolute;
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .device-lg::before {
+      top: 10px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: scale(1) translateX(-50%);
+      z-index: 1;
+    }
+
+    .device-lg::after {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 17px;
+      z-index: 1;
+      opacity: 1;
+      border-radius: 4px 4px 20px 20px;
+      background-color: #757575;
+      background-repeat: no-repeat;
+      background-size: 100px 6px, auto auto;
+      background-position: top center, top center;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.05) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 10%, transparent 15%, rgba(0, 0, 0, 0.1) 68%, rgba(0, 0, 0, 0.275) 73%);
+      box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .myDiv {
+      height: 500px;
+      width: 500px;
+      background: green;
+    }
+
+    .display-lg {
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      border: 2px solid #383838;
+      border-radius: 18px;
+      box-shadow: -3px 0px 5px 3px rgba(0, 0, 0, 0.2);
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      width: 30vw;
+      height: 20vw;
+      min-width: 250px;
+      min-height: 180px;
+      max-width: 450px;
+      max-height: 300px;
+    }
+
+    .display-md {
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      border: 2px solid #383838;
+      border-radius: 18px;
+      box-shadow: -3px 0px 5px 3px rgba(0, 0, 0, 0.2);
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      width: 30vw;
+      height: 22vw;
+      min-width: 300px;
+      min-height: 218px;
+      max-width: 400px;
+      max-height: 300px;
+    }
+
+    .display-sm {
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      border: 2px solid #383838;
+      border-radius: 18px;
+      box-shadow: -3px 0px 5px 3px rgba(0, 0, 0, 0.2);
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      width: 20vw;
+      height: 10vw;
+      min-width: 200px;
+      min-height: 100px;
+      box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      max-height: 150px;
+    }
+
+    .glass-sm {
+      position: relative;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: stretch;
+      background-color: #000;
+      padding: 7px 20px 7px 25px;
+      transition: padding 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .glass-sm::before,
+    .glass-sm::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+    }
+
+    .glass-sm::before {
+      top: -125%;
+      right: 0;
+      bottom: -125%;
+      left: -30%;
+      transform-origin: 100% 50%;
+      background-image: linear-gradient(to left, transparent 10%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.4) 15%, transparent 15%, transparent 20%, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.4) 25%, transparent 25%), linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+      transform: translate(0%, 16.6666666667%) rotate(45deg);
+    }
+
+    .glass-sm::after {
+      top: 40px;
+      bottom: 40px;
+      left: 5px;
+      right: 7px;
+      border-radius: 3px;
+      background-image: linear-gradient(to left, #333 0%, #000 3px, transparent 3px), radial-gradient(circle at 8px, transparent 6px, #333 6px, #333 8px, transparent 8px);
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .glass-md {
+      position: relative;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: stretch;
+      background-color: #000;
+      padding: 7px 20px 7px 25px;
+      transition: padding 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      padding: 15px 25px 15px 30px;
+    }
+
+    .glass-md::before,
+    .glass-md::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+    }
+
+    .glass-md::before {
+      top: -125%;
+      right: 0;
+      bottom: -125%;
+      left: -30%;
+      transform-origin: 100% 50%;
+      background-image: linear-gradient(to left, transparent 10%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.4) 15%, transparent 15%, transparent 20%, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.4) 25%, transparent 25%), linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+      transform: translate(0%, 16.6666666667%) rotate(45deg);
+      transition: transform 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .glass-md::after {
+      top: 100px;
+      bottom: 100px;
+      right: 10px;
+      left: 7px;
+      border-radius: 3px;
+      background-image: linear-gradient(to left, #333 0%, #000 3px, transparent 3px), radial-gradient(circle at 8px, transparent 6px, #333 6px, #333 8px, transparent 8px);
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .glass-lg {
+      position: relative;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: stretch;
+      background-color: #000;
+      padding: 20px 10px;
+      transition: padding 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .glass-lg::before,
+    .glass-lg::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+    }
+
+    .glass-lg::before {
+      top: -125%;
+      right: 0;
+      bottom: -125%;
+      left: -30%;
+      transform-origin: 100% 50%;
+      background-image: linear-gradient(to left, transparent 10%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.4) 15%, transparent 15%, transparent 20%, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.4) 25%, transparent 25%), linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+      transform: translate(0%, -16.6666666667%) rotate(-45deg);
+      transition: transform 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .glass-lg::after {
+      top: 40px;
+      bottom: 40px;
+      right: -5px;
+      left: -20px;
+      border-radius: 3px;
+      background-image: linear-gradient(to left, #333 0%, #000 3px, transparent 3px), radial-gradient(circle at 8px, transparent 6px, #333 6px, #333 8px, transparent 8px);
+      transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .viewport-lg {
+      position: relative;
+      z-index: 0;
+      flex: 1 1 auto;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .viewport-lg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      transform-origin: top right;
+      transform: rotate(0deg) translateX(0px);
+      transition: background-size 0ms 275ms, transform 0ms 275ms;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat-y, repeat-y;
+      background-image: linear-gradient(to bottom, transparent, white), radial-gradient(circle at center, yellow 10px, transparent 10px), linear-gradient(to bottom left, #a3e2f5 45%, transparent 45%), linear-gradient(to bottom right, #a3e2f5 35%, #64b46b 35%), linear-gradient(to bottom, white, white), linear-gradient(to bottom, #ddd 5px, transparent 5px, transparent 10px, #ddd 10px, #ddd 15px, transparent 15px, transparent 20px, #ddd 20px, #ddd 25px, transparent 25px), linear-gradient(to bottom, transparent 30px, #ddd 30px, #ddd 35px, transparent 35px);
+      background-size: 100% 30px, 20px 20px, 90px 90px, 90px 90px, 100px 100px, calc(100% - 20px) 50px, calc(100% - 60px) 50px;
+      background-position: bottom left, right 22px top 23px, right 10px top 10px, right 10px top 10px, right 10px top 10px, right 10px top 10px, right 50px top 10px;
+    }
+
+    .viewport-md {
+      position: relative;
+      z-index: 0;
+      flex: 1 1 auto;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .viewport-md::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: top right;
+      transition: background-size 0ms 275ms, transform 0ms 275ms;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat-y, repeat-y;
+      background-image: linear-gradient(to bottom, transparent, white), radial-gradient(circle at center, yellow 10px, transparent 10px), linear-gradient(to bottom left, #a3e2f5 45%, transparent 45%), linear-gradient(to bottom right, #a3e2f5 35%, #64b46b 35%), linear-gradient(to bottom, white, white), linear-gradient(to bottom, #ddd 5px, transparent 5px, transparent 10px, #ddd 10px, #ddd 15px, transparent 15px, transparent 20px, #ddd 20px, #ddd 25px, transparent 25px), linear-gradient(to bottom, transparent 30px, #ddd 30px, #ddd 35px, transparent 35px);
+      background-size: 100% 30px, 20px 20px, 90px 90px, 90px 90px, 100px 100px, calc(100% - 20px) 50px, calc(100% - 60px) 50px;
+      transform: rotate(90deg) translateX(310px);
+      background-position: bottom left, right 22px top 23px, right 10px top 10px, right 10px top 10px, right 10px top 10px, right 10px top 10px, right 50px top 10px;
+    }
+
+    .viewport-sm {
+      position: relative;
+      z-index: 0;
+      flex: 1 1 auto;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .viewport-sm::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      transform-origin: top right;
+      transform: rotate(90deg) translateX(110px);
+      transition: background-size 0ms 275ms, transform 0ms 275ms;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat-y, repeat-y;
+      background-image: linear-gradient(to bottom, transparent, white), radial-gradient(circle at center, yellow 10px, transparent 10px), linear-gradient(to bottom left, #a3e2f5 45%, transparent 45%), linear-gradient(to bottom right, #a3e2f5 35%, #64b46b 35%), linear-gradient(to bottom, white, white), linear-gradient(to bottom, #ddd 5px, transparent 5px, transparent 10px, #ddd 10px, #ddd 15px, transparent 15px, transparent 20px, #ddd 20px, #ddd 25px, transparent 25px), linear-gradient(to bottom, transparent 30px, #ddd 30px, #ddd 35px, transparent 35px);
+      background-size: 100% 30px, 20px 20px, 90px 90px, 90px 90px, 100px 100px, calc(100% - 20px) 50px, calc(100% - 60px) 50px;
+      transform: rotate(0deg) translateX(0px);
+      background-position: bottom left, right 22px top 23px, right 10px top 10px, right 10px top 10px, right 10px top 10px, right 10px top 10px, right 50px top 10px;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      function moveLargeToMedium() {
+        $("#device").switchClass("device-lg", "device-md", 0);
+        $("#display").switchClass("display-lg", "display-md", 0);
+        $("#glass").switchClass("glass-lg", "glass-md", 0);
+        $("#viewport").switchClass("viewport-lg", "viewport-md", 0);
+        setTimeout(moveMediumToSmall, 1000);
+      }
+
+      function moveMediumToSmall() {
+        $("#device").switchClass("device-md", "device-sm", 0);
+        $("#display").switchClass("display-md", "display-sm", 0);
+        $("#glass").switchClass("glass-md", "glass-sm", 0);
+        $("#viewport").switchClass("viewport-md", "viewport-sm", 0);
+        setTimeout(moveSmallToLarge, 1000);
+      }
+
+      function moveSmallToLarge() {
+        $("#device").switchClass("device-sm", "device-lg", 0);
+        $("#display").switchClass("display-sm", "display-lg", 0);
+        $("#glass").switchClass("glass-sm", "glass-lg", 0);
+        $("#viewport").switchClass("viewport-sm", "viewport-lg", 0);
+      }
+
+      setInterval(moveLargeToMedium, 3000);
+      return false;
+    });
+  </script>
 
 </head>
 
@@ -774,20 +1084,20 @@ margin-top: 5px;
 
   <!-- Navigation -->
   <div class="navtigation-bar">
-    <span role="img" aria-label="rocket">🚀</span> 
+    <span role="img" aria-label="rocket">🚀</span>
     Join our beta testing
     <a class="navtigation-bar-button" href="" target="_blank" rel="noopener noreferrer">
       Join
       <span role="img" aria-label="heart">✔️</span>
     </a>
-    </div>
+  </div>
 
   <!-- Masthead -->
   <header class="landing-page">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="px">
+        <div class="col-lg-7 col-md-6 col-sm-6">
+          <!-- <div class="px">
             <div class="px__body">
               <div class="px__body__cut"></div>
               <div class="px__body__speaker"></div>
@@ -803,7 +1113,7 @@ margin-top: 5px;
               <div class="px__screen__">
                 <div class="px__screen__frame">
                   <div id="header" class="iPhone-header"></div>
-                  <!-- preloader start -->
+                   preloader start
                   <div id="spinner" class='preloader-spin--inverted'>
                     <div class='preloader-spin__petal'></div>
                     <div class='preloader-spin__petal'></div>
@@ -824,11 +1134,21 @@ margin-top: 5px;
                 </div>
               </div>
             </div>
+          </div> 
+        -->
+          <div class="device-wrapper">
+            <div id="device" class="device-lg">
+              <div id="display" class="display-lg">
+                <div id="glass" class="glass-lg">
+                  <div id="viewport" class="viewport-lg"></div>
+                </div>
+              </div>
+            </div>
           </div>
 
 
         </div>
-        <div class="col-lg-7 col-md-6 col-sm-6 text-white my-auto">
+        <div class="col-lg-5 col-md-6 col-sm-6 text-white my-auto">
           <h1 class="mb-5">Build an instant app for your business or project and generate more leads!</h1>
         </div>
       </div>
