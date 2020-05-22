@@ -675,15 +675,18 @@
     }
 
     .device-wrapper {
-      height: 45vh;
+      height: 50vh;
+      width: auto;
+      overflow:hidden;
+      padding-top: 7%;;
     }
 
     .device-sm {
+      margin: auto;
       position: absolute;
-      top: 50%;
-      left: 50%;
       transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform: translate(-50%, -50%) rotate(-90deg);
+      transform-origin: 90% 50%;
+      transform: rotate(-90deg);
     }
 
     .device-sm::before,
@@ -694,21 +697,12 @@
     }
 
     .device-sm::before {
-      top: 10px;
-      left: 50%;
-      width: 5px;
-      height: 5px;
       border-radius: 100%;
       background-color: rgba(255, 255, 255, 0.25);
-      transform: scale(0) translateX(-50%);
       z-index: 1;
     }
 
     .device-sm::after {
-      bottom: 0;
-      left: 30px;
-      right: 30px;
-      height: 0;
       z-index: 1;
       border-radius: 4px 4px 20px 20px;
       background-color: #757575;
@@ -722,10 +716,9 @@
     .device-md {
       position: absolute;
       margin: auto;
-      top: 50%;
-      left: 50%;
       transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform: translate(-50%, -50%) rotate(-90deg);
+      transform-origin: 60% 50%;
+      transform: rotate(-90deg);
     }
 
     .device-md::before,
@@ -736,13 +729,8 @@
     }
 
     .device-md::before {
-      top: 10px;
-      left: 50%;
-      width: 5px;
-      height: 5px;
       border-radius: 100%;
       background-color: rgba(255, 255, 255, 0.25);
-      transform: scale(0) translateX(-50%);
       z-index: 1;
     }
 
@@ -762,12 +750,11 @@
     }
 
     .device-lg {
+      margin: auto;
       position: absolute;
       transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      top: 50%;
-      left: 50%;
       padding: 0 40px 5px;
-      transform: translate(-50%, -50%) rotate(0deg);
+      transform:  rotate(0deg);
     }
 
     .device-lg::before,
@@ -778,13 +765,8 @@
     }
 
     .device-lg::before {
-      top: 10px;
-      left: 50%;
-      width: 5px;
-      height: 5px;
       border-radius: 100%;
       background-color: rgba(255, 255, 255, 0.25);
-      transform: scale(1) translateX(-50%);
       z-index: 1;
     }
 
@@ -838,8 +820,8 @@
       height: 22vw;
       min-width: 300px;
       min-height: 218px;
-      max-width: 250px;
-      max-height: 200px;
+      max-width: 350px;
+      max-height: 235px;
     }
 
     .display-sm {
@@ -1050,26 +1032,26 @@
   <script>
     $(document).ready(function () {
       function moveLargeToMedium() {
-        $("#device").switchClass("device-lg", "device-md", 0);
-        $("#display").switchClass("display-lg", "display-md", 0);
-        $("#glass").switchClass("glass-lg", "glass-md", 0);
-        $("#viewport").switchClass("viewport-lg", "viewport-md", 0);
+        $("#device").switchClass("device-lg", "device-md", 500);
+        $("#display").switchClass("display-lg", "display-md", 500);
+        $("#glass").switchClass("glass-lg", "glass-md", 500);
+        $("#viewport").switchClass("viewport-lg", "viewport-md", 500);
         setTimeout(moveMediumToSmall, 1000);
       }
 
       function moveMediumToSmall() {
-        $("#device").switchClass("device-md", "device-sm", 0);
-        $("#display").switchClass("display-md", "display-sm", 0);
-        $("#glass").switchClass("glass-md", "glass-sm", 0);
-        $("#viewport").switchClass("viewport-md", "viewport-sm", 0);
+        $("#device").switchClass("device-md", "device-sm", 500);
+        $("#display").switchClass("display-md", "display-sm", 500);
+        $("#glass").switchClass("glass-md", "glass-sm", 500);
+        $("#viewport").switchClass("viewport-md", "viewport-sm", 500);
         setTimeout(moveSmallToLarge, 1000);
       }
 
       function moveSmallToLarge() {
-        $("#device").switchClass("device-sm", "device-lg", 0);
-        $("#display").switchClass("display-sm", "display-lg", 0);
-        $("#glass").switchClass("glass-sm", "glass-lg", 0);
-        $("#viewport").switchClass("viewport-sm", "viewport-lg", 0);
+        $("#device").switchClass("device-sm", "device-lg", 500);
+        $("#display").switchClass("display-sm", "display-lg", 500);
+        $("#glass").switchClass("glass-sm", "glass-lg", 500);
+        $("#viewport").switchClass("viewport-sm", "viewport-lg", 500);
       }
 
       setInterval(moveLargeToMedium, 3000);
