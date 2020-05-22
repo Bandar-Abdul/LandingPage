@@ -8,6 +8,17 @@ body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+
+a{
+  color:#eaeaea;
+}
+a:hover{
+  color:white;
+}
+.text-muted{
+  color:rgb(194,194,194) !important;
+}
+
 h1,
 h2,
 h3,
@@ -128,18 +139,22 @@ header.masthead h1 {
 }
 
 footer.footer {
-  padding-top: 4rem;
   padding-bottom: 4rem;
+  background-image: linear-gradient(90deg, #5f0a87 0%, #a4508b 99%);
 }
 
 
 /* Buttons */
 
 .header-design {
-  background-color: #a4508b;
-  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+  background-image: linear-gradient(90deg, #5f0a87 0%, #a4508b 99%);
   height: 120px;
   text-align: center;
+}
+
+.header-design-inverted{
+  height: 120px;
+  transform:rotate(180deg);
 }
 
 .listar-map-button {
@@ -181,7 +196,6 @@ footer.footer {
 }
 
 header .footer-wave {
-  max-width: 102%;
   width: 100%;
   height: 187.8px;
   left: 0;
@@ -557,9 +571,11 @@ header .footer-wave {
 }
 
 .pset {
-  padding-top: 180px;
-  padding-bottom: 80px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: rgb(244,244,244);
 }
+
 
 .listar-map-button-text span {
   position: relative;
