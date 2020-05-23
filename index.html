@@ -442,6 +442,42 @@
       border-color: #000;
     }
 
+    .homescreen-icon {
+      z-index: 1;
+      position: absolute;
+      cursor: pointer;
+      top: 30%;
+      left: 36%;
+      width: 30%;
+      animation: shake 0.2s;
+
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: rotate(-2deg);
+        animation-timing-function: ease-in;
+      }
+
+      50% {
+        transform: rotate(2.5deg);
+        animation-timing-function: ease-out;
+      }
+    }
+    
+
+    .homescreen {
+      font-size: 48px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+
+
     .preloader-spin,
     .preloader-spin--inverted {
       font-size: 48px;
@@ -1326,7 +1362,7 @@
             <p class="lead mb-4">You can try out all features of Appomatics anytime on our website before buying.
               Soon you'll be able to customize many asthetic features, including colors and logos!.
               Once you subscribe to a package, you'll be prompted to tailor the application to your brand.
-              We will use the preferences you selected to deploy the app on Appple's Appstore and Google's Playstore.
+              We will use the preferences you selected to deploy your own dedicated app on Appple's Appstore and Google's Playstore.
             </p>
           </div>
           <div class="col-lg-4 col-md-5 col-sm-6">
@@ -1360,6 +1396,11 @@
                       <div class='preloader-spin__petal'></div>
                       <div class='preloader-spin__petal'></div>
                       <div class='preloader-spin__petal'></div>
+                    </div>
+
+                    <div id="homescreen" class='homescreen'>
+                      <img style="width:100%;height:100%;border-radius: 9%/4% !important;" src="./img/iPhone.jpg"></img>
+                      <img onclick="document.getElementById('homescreen').style.display='none';document.getElementById('header').style.background='#51688f';" class="homescreen-icon" src="./img/icon.png"></img>
                     </div>
 
                     <iframe scrolling="no" frameborder="0" class="modal-iframe-wrapper" src="http://142.93.107.10"
@@ -1408,8 +1449,8 @@
                 <div class="listar-feature-content-wrapper" style="padding-top: 0px;">
 
                   <div class="listar-feature-item-title listar-feature-counter-added">
-                    <span><span>01</span>
-                      Basic </span>
+                    <span><span>299</span>
+                      SAR/Month </span>
                   </div>
                   <ul class="list-group features-list">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -1422,7 +1463,7 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Payment Gateway
-                      <span class="badge badge-primary badge-pill badge-success">Yes</span>
+                      <span class="badge badge-primary badge-pill badge-danger">No</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Push Notifications
@@ -1468,8 +1509,8 @@
                 <div class="listar-feature-content-wrapper" style="padding-top: 0px;">
 
                   <div class="listar-feature-item-title listar-feature-counter-added">
-                    <span><span>02</span>
-                      Basic+ </span>
+                    <span><span>499</span>
+                      SAR/Month </span>
                   </div>
 
                   <ul class="list-group features-list">
@@ -1487,7 +1528,7 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Push Notifications
-                      <span class="badge badge-primary badge-pill badge-success">Yes</span>
+                      <span class="badge badge-primary badge-pill badge-danger">No</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                       Hosting
@@ -1529,8 +1570,8 @@
                 <div class="listar-feature-content-wrapper" style="padding-top: 0px;">
 
                   <div class="listar-feature-item-title listar-feature-counter-added">
-                    <span><span>03</span>
-                      Pro </span>
+                    <span><span>699</span>
+                      SAR/Month </span>
                   </div>
                   <ul class="list-group features-list">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
